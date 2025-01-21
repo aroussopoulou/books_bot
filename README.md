@@ -80,6 +80,7 @@ Do you need any further help with books?
 
 Your input ->  Show me the bestseller list
 Here are the current bestsellers in hardcover fiction:
+
 📚 Title: IRON FLAME
 
 🖋️ Author: Rebecca Yarros
@@ -153,3 +154,67 @@ The Google Books API serves as a comprehensive database for searching books, fet
 
 **New York Times Books API**
 To complement the comprehensive data from Google Books, the New York Times Books API was chosen to retrieve curated bestseller lists. This API provides reliable, authoritative information on current trends in literature, especially within categories like hardcover fiction. A dedicated action (ActionBookBestSellers) fetches bestseller data, processes it, and presents it in a user-friendly format. The rationale here is twofold: the NYT Books API not only offers curated and timely recommendations from a trusted source but also enhances the chatbot’s credibility by tapping into a recognized authority on literary trends.
+
+## Challenges and Solutions
+
+### 1. Managing Dialogue Rules and Stories
+
+**Challenge:** Integrating both Rasa rules and stories to handle actions caused conflicts. The system struggled to differentiate between strict rule-based responses and more flexible story-based conversation flows, leading to unpredictable behavior and difficulties in maintaining coherent dialogues.
+
+**Solution:** To streamline conversation management, I chose to consolidate action handling exclusively into stories rather than mixing in separate rules for those actions. By doing so, I simplified the dialogue structure:
+
+### 2. Large Model Size and GitHub Upload Constraints
+
+**Challenge:** The model and associated files were too large for GitHub’s standard file size limits, particularly due to the extensive training data in nlu.yml. This made pushing the repository to GitHub difficult.
+
+**Solution:** To reduce the model size and fit GitHub’s constraints:
+
+Simplified nlu.yml: Removed some lines and less relevant training examples from nlu.yml to decrease the overall file size without compromising essential functionality.
+Git LFS: Introduced Git Large File Storage (Git LFS) to handle large files if necessary, though simplifying the data was prioritized.
+Impact:
+The repository became small enough to upload to GitHub successfully while maintaining the core functionalities of the chatbot, but the bad news is that the sentences of the model that can be understood and recognized have decreased. 
+
+### 3. Persisting Query Between Actions for Pagination
+
+**Challenge:**In the action_load_more_books, the variable query was not preserved from the previous action_search_books. This meant that when the user requested more books, the chatbot lost the original search context, resulting in errors or incorrect behavior.
+
+**Solution:** To maintain the search context across multiple actions:
+Modified action_search_books to return the search query and initial offset as slot events:
+
+return [
+    {"event": "slot", "name": "search_query", "value": query},
+    {"event": "slot", "name": "search_offset", "value": 5.0},
+]
+
+This ensured that search_query persists in the conversation memory and can be accessed by action_load_more_books, allowing the chatbot to continue fetching the next set of books using the same query.
+
+**Impact:** The chatbot now correctly carries over the search context across multiple "more books" requests, enabling a seamless pagination experience.
+
+### 4. Domain Slot Configuration Issue
+
+**Challenge:** There was a problem with the definition of the search_offset slot in the domain. Initially defined incorrectly or with insufficient configuration, this could cause slot persistence or type issues.
+
+**Solution:** Updated the slot configuration in domain.yml to:
+
+search_offset:
+    type: float                   
+    influence_conversation: false
+    initial_value: 0.0            
+    mappings: []
+    
+This configuration correctly defines the slot type, initial value, and provides an empty mapping to satisfy Rasa's requirements.
+
+### 5. Additional Model Design Considerations
+
+The model is designed to address conversational challenges robustly:
+
+**Handling Misunderstandings:** If the chatbot doesn't understand a user's input, it is equipped to ask clarifying questions or request rephrasing. This fallback mechanism ensures smoother conversations and helps guide users toward more understandable queries.
+
+**Responding to Bot Challenges:** When a user states something like "I'm a bot" or questions the chatbot's nature, the model can recognize these inputs (using the bot_challenge intent) and respond appropriately. This feature helps maintain engagement and assures the user of the bot's capabilities and design intent.
+
+## Setup Instructions
+
+### 1. Clone the Repository
+ mkdir books_bot
+ cd books_bot
+ git clone 
