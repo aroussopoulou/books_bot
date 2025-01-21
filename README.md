@@ -81,33 +81,67 @@ Do you need any further help with books?
 Your input ->  Show me the bestseller list
 Here are the current bestsellers in hardcover fiction:
 📚 Title: IRON FLAME
+
 🖋️ Author: Rebecca Yarros
+
 💡 Description: The second book in the Empyrean series. Violet Sorrengail’s next round of training under the new vice commandant might require her to betray the man she loves.
+
 🔗 Buy here: https://www.amazon.com/dp/1649374178?tag=thenewyorktim-20
+
+
 📚 Title: JAMES
+
 🖋️ Author: Percival Everett
+
 💡 Description: A reimagining of “Adventures of Huckleberry Finn” shines a different light on Mark Twain's classic, revealing new facets of the character of Jim.
+
 🔗 Buy here: https://www.amazon.com/dp/0385550367?tag=thenewyorktim-20
+
+
 📚 Title: THE WOMEN
+
 🖋️ Author: Kristin Hannah
+
 💡 Description: In 1965, a nursing student follows her brother to serve during the Vietnam War and returns to a divided America.
+
 🔗 Buy here: https://www.amazon.com/dp/1250178630?tag=thenewyorktim-20
+
+
 📚 Title: FOUR RUINED REALMS
+
 🖋️ Author: Mai Corland
+
 💡 Description: The second book in the Broken Blades series. Trust is tested in the pursuit of the Golden Ring of the Dragon Lord.
+
 🔗 Buy here: https://www.amazon.com/dp/1649377509?tag=thenewyorktim-20
+
+
 📚 Title: NEVER SAY NEVER
+
 🖋️ Author: Danielle Steel
+
 💡 Description: A woman reeling from her husband’s infidelity and the loss of her job meets a well-known actor in the French countryside.
+
 🔗 Buy here: https://www.amazon.com/dp/059349864X?tag=thenewyorktim-20
+
+
 📚 Title: THE GOD OF THE WOODS
+
 🖋️ Author: Liz Moore
+
 💡 Description: When a 13-year-old girl disappears from an Adirondack summer camp in 1975, secrets kept by the Van Laar family emerge.
+
 🔗 Buy here: https://www.amazon.com/dp/0593418913?tag=thenewyorktim-20
+
+
 📚 Title: HOLMES IS MISSING
+
 🖋️ Author: James Patterson and Brian Sitts
+
 💡 Description: The second book in the Holmes, Margaret & Poe series. A series of child abductions perplexes the private investigators.
+
 🔗 Buy here: https://www.amazon.com/dp/0316569976?tag=thenewyorktim-20
+
 Do you need any further help with books?
 
 ## Data Source Integration
