@@ -1,0 +1,99 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - search_books
+  - more_books
+  - book_best_sellers
+  - book_details
+  - book_synopsis
+  - bot_challenge
+  - get_recommendations
+
+entities:
+  - author
+  - genre
+  - keyword
+  - book_title
+
+slots:
+  author:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: author
+
+  genre:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: genre
+
+  keyword:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: keyword
+
+  book_title:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: book_title
+
+  search_query:
+    type: text
+    influence_conversation: false
+    mappings: []
+
+  search_offset:
+    type: float                   
+    influence_conversation: false
+    initial_value: 0.0            
+    mappings: []
+
+responses:
+  utter_greet:
+    - text: "Hi! I’m here to help you discover books, reviews, and more. What would you like to know?"
+    - text: "Hello there! Looking for book recommendations, reviews, or details?"
+    - text: "Greetings! How can I assist you with books today?"
+
+  utter_deny:
+    - text: "That’s okay. Feel free to ask me anything else!"
+    - text: "No worries. Let me know if you need anything else."
+    - text: "Alright, ask away if there's something else I can help with!"
+
+  utter_affirm:
+    - text: "Do you need any further help with books?"
+
+  utter_clarify:
+    - text: "I’m sorry, I didn’t quite understand. Could you rephrase your question for me?"
+
+  utter_goodbye:
+    - text: "Take care and happy reading!"
+    - text: "Goodbye! Enjoy your next read!"
+    - text: "Farewell! Happy reading and see you soon!"
+
+  utter_bot_challenge:
+    - text: "I’m a virtual assistant created to help you explore the world of books!"
+    - text: "Yes, I'm a bot designed to assist with book recommendations, details, and reviews."
+    - text: "I'm not human—I'm here to help you find and explore books."
+
+actions:
+  - action_search_books
+  - action_load_more_books
+  - action_book_best_sellers
+  - action_book_details
+  - action_book_synopsis
+  - action_show_recommendations
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

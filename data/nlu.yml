@@ -1,0 +1,106 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - hey
+    - hi there
+    - hey there
+    - hello there
+
+- intent: goodbye
+  examples: |
+    - goodbye
+    - bye
+    - see you
+    - bye bye
+
+- intent: affirm
+  examples: |
+    - yes
+    - yeah
+    - yep
+    - absolutely
+    - of course
+    - sure
+
+- intent: deny
+  examples: |
+    - no
+    - nope
+    - nah
+    - not really
+    - that’s not right
+    - wrong
+
+- lookup: genre
+  examples: |
+    - horror
+    - science fiction
+    - fantasy
+    - romance
+    - thriller
+    - mystery
+    - historical fiction
+    - non-fiction
+    - self-help
+
+- lookup: keyword
+  examples: |
+    - artificial intelligence
+    - programming
+    - world history
+    - space exploration
+
+- regex: book_title
+  examples: |
+    - (?:'[^']+'|\"[^\"]+\")|(?:[A-Z][a-z0-9]+(?: [A-Z][a-z0-9]+)*)
+
+- intent: search_books
+  examples: |
+    - Show me books in the [horror](genre) genre
+    - I’m looking for books about [history](keyword)
+    - Any books in the [science fiction](genre) category?
+    - Can you recommend books by [Agatha Christie](author)
+
+- intent: more_books
+  examples: |
+    - more
+    - more books
+    - load more
+    - next
+    - show more
+
+- intent: book_synopsis
+  examples: |
+    - Can you give me a synopsis of [Dune](book_title)?
+    - What's the description for [The Alchemist](book_title)?
+    - Tell me what [1984](book_title) is about
+
+- intent: book_best_sellers
+  examples: |
+    - Show me the bestseller list
+    - What's trending in books?
+    - Show me the New York Times bestseller list
+
+- intent: book_details
+  examples: |
+    - Give me details about [The Catcher in the Rye](book_title)
+    - Show me more info about [The Hobbit](book_title)
+    - I'd like full info on [The Great Gatsby](book_title)
+
+- intent: bot_challenge
+  examples: |
+    - Are you a bot?
+    - Are you human?
+    - I'm a bot
+    - What are you?
+    - Who created you?
+    - Can you pass the Turing test?
+
+- intent: get_recommendations
+  examples: |
+    - Recommend some books
+    - What books do you suggest?
