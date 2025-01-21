@@ -24,7 +24,7 @@ class ActionShowRecommendations(Action):
         )
         return []
     
-# 1) SEARCH BOOKS (initial 5) - unchanged
+# 1) SEARCH BOOKS 
 class ActionSearchBooks(Action):
     def name(self) -> Text:
         return "action_search_books"
@@ -49,7 +49,7 @@ class ActionSearchBooks(Action):
         if keyword:
             query += f"+{keyword}"
 
-        api_key = "AIzaSyCFPALEff2_bmC4EDrpMob7-Fij7yVCmOM"
+        api_key = "Google_API_key" # Use your API key here
         url = f"https://www.googleapis.com/books/v1/volumes?q={query}&key={api_key}"
 
         try:
@@ -99,9 +99,8 @@ class ActionLoadMoreBooks(Action):
             return []
 
         max_results = 5
-        api_key = "AIzaSyCFPALEff2_bmC4EDrpMob7-Fij7yVCmOM"  # Use your API key here
+        api_key = "Google_API_key"  # Use your API key here
 
-        # Use a clean base URL without embedded parameters
         url = "https://www.googleapis.com/books/v1/volumes"
 
         # Pass all parameters through the params dictionary
@@ -163,7 +162,7 @@ class ActionBookBestSellers(Action):
     ) -> List[Dict[Text, Any]]:
         
 
-        api_key = "vqFV7OdOKE51Dy5CUFLJrk2GcREy4BeG"
+        api_key = "NYT_API_key" #Use your API here
 
         url = f"https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key={api_key}"
 
@@ -181,7 +180,7 @@ class ActionBookBestSellers(Action):
                 return []
 
             dispatcher.utter_message(text="Here are the current bestsellers in hardcover fiction:")
-            # Show top 10
+            # Show top 7
             for book in books[:7]:
                 title = book.get("title", "Unknown Title")
                 author = book.get("author", "Unknown Author")
@@ -204,7 +203,7 @@ class ActionBookBestSellers(Action):
         return []
 
 
-# 4) BOOK SYNOPSIS (just description)
+# 4) BOOK SYNOPSIS 
 class ActionBookSynopsis(Action):
     def name(self) -> Text:
         return "action_book_synopsis"
@@ -220,7 +219,7 @@ class ActionBookSynopsis(Action):
             dispatcher.utter_message(text="Please specify which book you want a synopsis for.")
             return []
 
-        api_key = "AIzaSyCFPALEff2_bmC4EDrpMob7-Fij7yVCmOM"
+        api_key = "Google_API_key" #Use your API here
         # Use book_title in the query
         url = "https://www.googleapis.com/books/v1/volumes"
         params = {
@@ -250,7 +249,7 @@ class ActionBookSynopsis(Action):
         return []
 
 
-# 5) BOOK DETAILS (author, publisher, date, link, no description)
+# 5) BOOK DETAILS 
 class ActionBookDetails(Action):
     def name(self) -> Text:
         return "action_book_details"
@@ -268,7 +267,7 @@ class ActionBookDetails(Action):
             )
             return []
         
-        api_key = "AIzaSyCFPALEff2_bmC4EDrpMob7-Fij7yVCmOM"
+        api_key = "Google_API_key" # Use your API here
         # Use book_title in the query
         url = "https://www.googleapis.com/books/v1/volumes"
         params = {
