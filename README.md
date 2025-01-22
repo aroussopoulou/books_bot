@@ -21,9 +21,11 @@ It supports pagination: when the user types **"more books,"** it retrieves addit
 **Demonstration:**
 
 Your input ->  hello
+
 Hello there! Looking for book recommendations, reviews, or details?
 
 Your input ->  Show me books in the horror genre
+
 Here are some books I found:
 - Tales from the Shadowhunter Academy
 - Misery
@@ -31,7 +33,9 @@ Here are some books I found:
 - Frankenstein
 - The Dream-quest of Unknown Kadath
 Type 'more books' if you'd like to see additional results.
+
 Your input ->  more books
+
 Here are some books I found:
 - Frankenstein by Mary Wollstonecraft Shelley
 - The Secret Path by Christopher Pike
