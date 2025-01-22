@@ -222,10 +222,15 @@ The model is designed to address conversational challenges robustly:
 ### 1. Clone the Repository
 
 In your PowerShell write
+
  mkdir books_bot
+ 
  cd books_bot
+ 
  python -m venv venv # Create a virtual environment
+ 
  .\venv\Scripts\Activate
+ 
  git clone https://github.com/aroussopoulou/books_bot.git
 
  ### 2. Extract the API keys
@@ -233,10 +238,15 @@ In your PowerShell write
  **GOOGLE API KEY**
  
  a) Go to the Google Cloud console 
+ 
  b) Sign in to your Google account (if it is your first time check this video: https://www.youtube.com/watch?v=KcHx5dXaDtk&ab_channel=CloudSprint)
+ 
  c) Go to the APIs and services
+ 
  d) Create credentials -> API key
+ 
  e) Go to the library and search **Books API**
+ 
  f) Press the enable button
 
  **NYT API KEY**
@@ -244,11 +254,17 @@ In your PowerShell write
  You can follow these instructions: https://developer.nytimes.com/get-started
 
  a) Visit the site https://developer.nytimes.com/
+ 
  b) Create an account and sign in
+ 
  c) Go to the user drop-down and select My Apps
+ 
  d) Click + New App to create a new app and enter a name
+ 
  e) Click Create and after go to the APIs tab
+ 
  f) Select the access toggle to enable or disable access to an API product from the app
+ 
  g) Go to My Apps and after in the list you can see the API key
 
  ### 3. Use your API keys to the actions.py
@@ -258,11 +274,15 @@ In your PowerShell write
  ### 4. Run the bot
 
  You have to open a new tab in PowerShell and write:
+ 
  cd books_bot 
+ 
   .\venv\Scripts\Activate
+  
   **rasa run actions**
 
   and in the tab that you were in before write:
+  
   **rasa shell**
   
  If it doesn't work try training the bot first: **rasa train** and after doing the above steps
@@ -274,9 +294,11 @@ Test different scenarios: searching books, loading more results, getting synopse
 ## Example runs
 
 Your input ->  Hi!
+
 Greetings! How can I assist you with books today?
 
 Your input ->  Show me books in the romance genre
+
 Here are some books I found:
 - Pride and Prejudice
 - Simple Gifts
@@ -286,6 +308,7 @@ Here are some books I found:
 Type 'more books' if you'd like to see additional results.
 
 Your input ->  more books
+
 Here are some books I found:
 - Sons and Lovers by David Herbert Lawrence
 - The Italian Girl by Lucinda Riley
@@ -296,11 +319,13 @@ Type 'more books' if you'd like more results.
 Do you need any further help with books?
 
 Your input ->  Tell me what Sons and Lovers by David Herbert Lawrence is about
+
 Synopsis of *Tell me what Sons and Lovers by David Herbert Lawrence is about*:
 This semi-autobiographical novel explores the emotional conflicts through the protagonist, Paul Morel, and the suffocating relationships with a demanding mother and two very different lovers.
 Do you need any further help with books?
 
 Your input ->  I'd like full info on Sons and Lovers by David Herbert Lawrence
+
 📖 *Title*: D.H. Lawrence's Son and Lovers: A Critique
 🖋️ *Author(s)*: D.S. Dalal
 🏢 *Publisher*: Sarup & Sons
@@ -309,9 +334,11 @@ Your input ->  I'd like full info on Sons and Lovers by David Herbert Lawrence
 Do you need any further help with books?
 
 Your input ->  Are you human?
+
 I’m a virtual assistant created to help you explore the world of books!
 
 Your input ->  Show me the bestseller list
+
 Here are the current bestsellers in hardcover fiction:
 📚 Title: IRON FLAME
 🖋️ Author: Rebecca Yarros
@@ -344,9 +371,11 @@ Here are the current bestsellers in hardcover fiction:
 Do you need any further help with books?
 
 Your input ->  No
+
 No worries. Let me know if you need anything else.
 
 Your input ->  goodbye
+
 Take care and happy reading!
 
 ## Dialog Policy Experimentation
