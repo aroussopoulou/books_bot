@@ -22,6 +22,7 @@ It supports pagination: when the user types **"more books,"** it retrieves addit
 
 Your input ->  hello
 Hello there! Looking for book recommendations, reviews, or details?
+
 Your input ->  Show me books in the horror genre
 Here are some books I found:
 - Tales from the Shadowhunter Academy
