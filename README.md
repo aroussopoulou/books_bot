@@ -8,10 +8,6 @@ The Book Discovery Chatbot is designed to help users find book recommendations, 
 
 **Real-world Data Integration:** The chatbot dynamically fetches data from reputable sources like Google Books and the New York Times, ensuring up-to-date and accurate information.
 
-## Presentation Link: 
-
-https://www.canva.com/design/DAGc4Lrr9SE/H_fFIbafoNB1JSzXQfcKZw/edit?utm_content=DAGc4Lrr9SE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
-
 
 ## Implemented Scenarios
 The chatbot demonstrates distinct functionalities through various interaction scenarios:
